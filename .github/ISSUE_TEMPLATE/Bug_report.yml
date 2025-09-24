@@ -14,9 +14,9 @@ body:
       label: Checklist prior issue creation
       description: Prior to creating the issue...
       options:
-        - label: I acknowledge that failure to follow the instructions below may result in the immediate closure or deletion of this issue.
+        - label: I understand that failure to follow below instructions may cause this issue to be closed.
           required: true
-        - label: I acknowledge that providing vague, inaccurate, or incomplete information may result in the immediate closure of this issue.
+        - label: I understand that vague, incomplete or inaccurate information may cause this issue to be closed.
           required: true
         - label: I understand that this form is intended solely for reporting software bugs and not for support-related inquiries.
           required: true
@@ -34,19 +34,19 @@ body:
       required: true
   - type: textarea
     attributes:
-      label: "Logs:"
-      description: "Please take a look at the [official documentation](https://docs.mailcow.email/troubleshooting/debug-logs/) and post the last few lines of logs, when the error occurs. For example, docker container logs of affected containers. This will be automatically formatted into code, so no need for backticks."
-      render: plain text
-    validations:
-      required: true
-  - type: textarea
-    attributes:
       label: "Steps to reproduce:"
       description: "Please describe the steps to reproduce the bug. Screenshots can be added, if helpful."
       placeholder: |-
         1. ...
         2. ...
         3. ...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Logs:"
+      description: "Please take a look at the [official documentation](https://docs.mailcow.email/troubleshooting/debug-logs/) and post the last few lines of logs, when the error occurs. For example, docker container logs of affected containers. This will be automatically formatted into code, so no need for backticks."
+      render: plain text
     validations:
       required: true
   - type: markdown
@@ -125,7 +125,7 @@ body:
   - type: input
     attributes:
       label: "Reverse proxy:"
-      placeholder: "e.g. nginx/Traefik/none"
+      placeholder: "e.g. nginx/Traefik, or none"
     validations:
       required: true
   - type: textarea
